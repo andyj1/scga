@@ -7,22 +7,8 @@ This repository contains the implementation of SCGA, a method to improve black-b
 python train_BIA_ours.py
 ```
 
-📖 **Paper**: [MDD-VL: Multimodal Dataset Distillation with Vision-Language Models](https://arxiv.org/abs/????)
+📖 **Paper**: [Improving Black-Box Generative Attacks via Generator Semantic Consistency]([https://arxiv.org/abs/????](https://arxiv.org/abs/2506.18248))
 
-This repository contains the official implementation for multimodal dataset distillation using vision-language models with support for both image-text retrieval and zero-shot classification tasks.
-
-<!-- <p align="center">
-  <img src="imgs/figure.png" alt="problem" title="problem" width="700">
-</p> -->
-
-## ✨ Key Features
-
-- 🚀 **Lightning Fabric** integration for efficient distributed training
-- 🎯 **Dual Evaluation System**: Unified evaluation for both retrieval and classification tasks
-- 🔄 **Hydra Configuration**: Flexible YAML-based configuration management
-- 📊 **Multiple Datasets**: Support for Flickr8k/30k, COCO, CIFAR-10/100, ImageNet, and more
-- 🎨 **Vision-Language Models**: CLIP-based architecture with customizable encoders
-- ⚡ **Multi-GPU Support**: Distributed training with automatic device management
 
 ## 📋 Table of Contents
 
