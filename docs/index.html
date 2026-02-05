@@ -468,8 +468,11 @@
             <sup>2</sup><strong>ADD</strong>
         </div>
         <div class="links">
+            <a href="https://arxiv.org/pdf/2506.18248" class="link-btn" target="_blank">
+                <i class="fas fa-file-pdf ri-file-pdf-fill"></i> arXiv
+            </a>
             <a href="https://openreview.net/forum?id=ibXhUapwcz" class="link-btn" target="_blank">
-                <i class="fas fa-file-pdf ri-file-pdf-fill"></i> Paper
+                <i class="fas fa-file-pdf ri-file-pdf-fill"></i> Openreview
             </a>
             <a href="https://github.com/andyj1/SCGA" class="link-btn" target="_blank">
                 <i class="fas fa fa-github ri-github-fill"></i> Code
@@ -676,23 +679,6 @@
 
             <div class="compare-grid" style="margin-top: 20px;">
                 <div class="compare-item">
-                    <!-- <h3>1) Perturbation Generation</h3> -->
-                    <div class="pill-row">
-                        <div class="pill">
-                            <div class="label seq">Generation</div>
-                            <div class="figure-block">
-                                <img src="imgs/metric_impact.png" alt="Generation" style="width: 100%; height: auto">
-                            </div>
-                            <p>In real world, adversarial perturbations induce different outcomes depending on whether the clean is inherently predicted as <b style="color:green">correct</b> or <b style="color:orange">incorrect</b> and the perturbed image triggers victim models to output the prediction as <b style="color:green">correct</b> or <b style="color:orange">incorrect</b>.</p>
-                        </div>
-                        <!-- <div class="pill">
-                            <div class="label par">Parallel</div>
-                            <p>Activates relevant nodes simultaneously, preserving the natural fan-out of the knowledge graph.</p>
-                        </div> -->
-                    </div>
-                </div>
-
-                <div class="compare-item">
                     <!-- <h3>2) Context Representation</h3> -->
                     <div class="pill-row">
                         <div class="pill">
@@ -731,19 +717,40 @@
                 </div>
 
                 <div class="compare-item">
+                    <!-- <h3>1) Perturbation Generation</h3> -->
+                    <div class="pill-row">
+                        <div class="pill">
+                            <div class="label par">Evaluation</div>
+                            <h2>Novel evaluation metric: Accidental Correction Rate (ACR)</h2>
+                            <div class="figure-block">
+                                <img src="imgs/metric_impact.png" alt="Evaluation" style="width: 100%; height: auto">
+                            </div>
+                            <p>In real world, adversarial perturbations induce different outcomes depending on whether the clean is inherently predicted as <b style="color:green">correct</b> or <b style="color:orange">incorrect</b> and the perturbed image triggers victim models to output the prediction as <b style="color:green">correct</b> or <b style="color:orange">incorrect</b>.</p>
+                        </div>
+                        <!-- <div class="pill">
+                            <div class="label par">Parallel</div>
+                            <p>Activates relevant nodes simultaneously, preserving the natural fan-out of the knowledge graph.</p>
+                        </div> -->
+                    </div>
+                </div>
+
+                <div class="compare-item">
                     <!-- <h3>4) Termination Reliability</h3> -->
                     <div class="pill-row">
                         <div class="pill">
                             <div class="label par">Evaluation</div>
                             <p>
-                                <h2>Novel evaluation metric: Accidental Correction Rate (ACR)</h2>
                                 <b>Complementary role to ASR.</b> At ϵ = 4, ACR (incorrect→correct) is 14% while ASR
                                 (correct→incorrect) is 8%, yielding a net gain of 6% correct predictions. Because ASR accounts
                                 for only harmful flips, it overlooks this positive balance; ACR makes it explicit.
+                            </p>
+                            <p></p>
                                 <b>ACR is non-monotonic, unlike Acc/ASR/FR.</b> It peaks at ε = 4 and then falls as stronger noise
                                 overwhelms corrective effects. This trend offers a very different view from the defender’s side:
                                 evaluation should consider not only how many errors an attack creates but also how many it
                                 inadvertently corrects.
+                            </p>
+                            <p>    
                                 <b>Actionable insight.</b> Defenders might tolerate or even harness low-budget perturbations that
                                 raise ACR, while attackers in safety-critical settings may need to penalize accidental corrections
                                 to avoid unintentionally improving model performance.
