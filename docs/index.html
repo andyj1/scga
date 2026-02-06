@@ -460,9 +460,9 @@
             Jaeseok Jeong<sup>1</sup>,
             Kuk-Jin Yoon<sup>1</sup>,
         </div>
-        <!-- <div class="authors">
-            dayoon.ko@vision.snu.ac.kr
-        </div> -->
+        <div class="authors">
+            {jeong2, hmyang, jason.jeong, kjyoon}@kaist.ac.kr
+        </div>
         <div class="affiliations">
             <sup>1</sup><strong>KAIST</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <sup>2</sup><strong>ADD</strong>
@@ -583,18 +583,18 @@
 
         <!-- Video: Sequential vs Parallel Search -->
         <section>
-            <h2>Motivation: Closer look into the adversarial perturbation generator</h2>
+            <h2>Motivation: Closer look into perturbation generator</h2>
             <p>
-                <b style="color:orange"> Research Question 1</b>: At <strong>what stage</strong> of perturbation synthesis do semantic cues deteriorate?
+                <b style="color:orange"> Question 1</b>: At <strong>what stage</strong> of perturbation synthesis do semantic cues deteriorate?
             </p>
             <p>
-                <b style="color:orange"> Research Question 2</b>: Which generator blocks most influence <strong>transferability</strong>?
+                <b style="color:orange"> Question 2</b>: Which generator blocks most influence <strong>transferability</strong>?
             </p>
             <div class="figure-block">
                 <img src="imgs/motivation.png" alt="Motivation" style="width: 100%; height: auto">
             </div>
             <p>
-                <b>Our observation on the semantic variability within the perturbation generator:</b>
+                <b>Our observations on the semantic variability within the perturbation generator:</b>
             </p>
             <p>
                 <strong>(a)</strong> Generator intermediate feature maps for each block partition.
@@ -617,7 +617,7 @@
 
             <!-- Teaser Figure -->
             <section class="teaser">
-                <h2>Proposed Method: Semantically Consistent Generative Attack</h2>
+                <h2>Proposed Method: Semantically Consistent Generative Attack (SCGA)</h2>
                 <div class="figure-block">
                     <img src="imgs/overview.png" alt="Method overview" style="width: 100%; height: auto">
                 </div>
@@ -721,12 +721,41 @@
                     <div class="pill-row">
                         <div class="pill">
                             <div class="label par">Evaluation</div>
-                            <h2>Novel evaluation metric: Accidental Correction Rate (ACR)</h2>
+                            <h2>New evaluation metric: Accidental Correction Rate (ACR)</h2>
+                            <div class="figure-block">
+                                <img src="imgs/equations.png" alt="Evaluation" style="width: 100%; height: auto">
+                            </div>
                             <div class="figure-block">
                                 <img src="imgs/metric_impact.png" alt="Evaluation" style="width: 100%; height: auto">
                             </div>
+                            <div class="figure-block">
+                                <img src="imgs/ablation_eps.png" alt="Evaluation" style="width: 100%; height: auto">
+                            </div>
                             <p>In real world, adversarial perturbations induce different outcomes depending on whether the clean is inherently predicted as <b style="color:green">correct</b> or <b style="color:orange">incorrect</b> and the perturbed image triggers victim models to output the prediction as <b style="color:green">correct</b> or <b style="color:orange">incorrect</b>.</p>
                         </div>
+                        <p>
+                            <b>Complementary role to ASR.</b> At ϵ_test = 4, ACR (incorrect→correct) is 14% while ASR
+                            (correct→incorrect) is 8%, yielding a net gain of 6% correct predictions. Because ASR accounts
+                            for only harmful flips, it overlooks this positive balance; ACR makes it explicit.
+                        </p>
+                            <b>ACR is non-monotonic, unlike Acc/ASR/FR.</b> It peaks at ε = 4 and then falls as stronger noise
+                            overwhelms corrective effects. This trend offers a very different view from the defender’s side:
+                            evaluation should consider not only how many errors an attack creates but also how many it
+                            inadvertently corrects.
+                        </p>
+                        <p>    
+                            <b>Actionable insight.</b> Defenders might tolerate or even harness low-budget perturbations that
+                            raise ACR, while attackers in safety-critical settings may need to penalize accidental corrections
+                            to avoid unintentionally improving model performance.
+        
+                        </p>
+                        <div class="figure-block">
+                            <img src="imgs/comparison.png" alt="Evaluation" style="width: 100%; height: auto">
+                        </div>
+                        <p>Our semantically consistent generative attack
+                            effectively exploits the generator intermediates to craft
+                            adversarial examples to enhance transferability from the
+                            baselines (● → ▼) across domains (a) and models (b).</p>
                         <!-- <div class="pill">
                             <div class="label par">Parallel</div>
                             <p>Activates relevant nodes simultaneously, preserving the natural fan-out of the knowledge graph.</p>
@@ -734,42 +763,18 @@
                     </div>
                 </div>
 
-                <div class="compare-item">
+                <!-- <div class="compare-item"> -->
                     <!-- <h3>4) Termination Reliability</h3> -->
-                    <div class="pill-row">
+                    <!-- <div class="pill-row">
                         <div class="pill">
                             <div class="label par">Evaluation</div>
-                            <p>
-                                <b>Complementary role to ASR.</b> At ϵ = 4, ACR (incorrect→correct) is 14% while ASR
-                                (correct→incorrect) is 8%, yielding a net gain of 6% correct predictions. Because ASR accounts
-                                for only harmful flips, it overlooks this positive balance; ACR makes it explicit.
-                            </p>
-                            <p></p>
-                                <b>ACR is non-monotonic, unlike Acc/ASR/FR.</b> It peaks at ε = 4 and then falls as stronger noise
-                                overwhelms corrective effects. This trend offers a very different view from the defender’s side:
-                                evaluation should consider not only how many errors an attack creates but also how many it
-                                inadvertently corrects.
-                            </p>
-                            <p>    
-                                <b>Actionable insight.</b> Defenders might tolerate or even harness low-budget perturbations that
-                                raise ACR, while attackers in safety-critical settings may need to penalize accidental corrections
-                                to avoid unintentionally improving model performance.
-
-                            </p>
-                            <div class="figure-block">
-                                <img src="imgs/comparison.png" alt="Evaluation" style="width: 100%; height: auto">
-                            </div>
-                            <p>Our semantically consistent generative attack
-                                effectively exploits the generator intermediates to craft
-                                adversarial examples to enhance transferability from the
-                                baselines (● → ▼) across domains (a) and models (b).</p>
                         </div>
-                        <!-- <div class="pill">
+                        <div class="pill">
                             <div class="label par">Parallel</div>
                             <p>Enables complete candidate coverage before selection, making termination conditions explicit and reliable.</p>
-                        </div> -->
+                        </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -919,36 +924,41 @@
         <!-- different generator architecture -->
         <section>
             <h2>Ablation Study</h2>
-            <p> 
+            <!-- <p> 
                 <strong>U-Net-based generator</strong>:
                 We show that our SCGA is generator architecture-agnostic by demonstrating consistent attack performance improvements with the U-Net architecture.
-            </p>
+            </p> -->
             <div class="figure-block">
                 <h3>Performance with a different generator architecture</h3>
                 <img src="imgs/diff_arch.png" alt="Different generator architecture" style="width: 100%; height: auto;">
             </div>
             <div class="figure-caption">              
-                <b>Quantitative cross-task transferability results.</b> We
+                <strong>U-Net-based generator</strong>:
+                We show that our SCGA is generator architecture-agnostic by demonstrating consistent attack performance improvements with the U-Net architecture.
+                <!-- <b>Quantitative cross-task transferability results.</b>  -->
+                We
                 report the average improvement (Δ%p) for our components applied
                 to different generator architectures and evaluated against semantic
                 segmentation (mIoU ↓) and object detection (mAP50 ↓) models.
                 MT denotes mean teacher, and better results in boldface.
             </div>
 
-            <div class="figure-block">
+            <!-- <div class="figure-block">
                 <h3>Test-time perturbation budget</h3>
                 <img src="imgs/ablation_eps.png" alt="" style="width:100% height: auto;">
             </div>            
             <div class="figure-caption">              
-                <b>Results by different test-time perturbation budget.</b> Caption
-            </div>
+                <b>Results by different test-time perturbation budget.</b>
+            </div> -->
 
             <div class="figure-block">
                 <h3>Robustness to defense mechanisms</h3>
                 <img src="imgs/defense.png" alt="" style="width:100% height: auto;">
                 <img src="imgs/defense_input_processing.png" alt="" style="width:100% height: auto;">
             </div>
-            <div class="figure-caption">              
+            <div class="figure-caption">        
+                Against adversarially trained models (Adv.IncV3, Adv.ViT, Adv.ConvNeXt) and input processing (JPEG, BDR, R&P, Random rotation, smoothing kernel (smoothing), total variation minimization (TVM), random pixel deflection (PD)) defenses,
+                our SCGA consistently enhances transfer attack performance over the baseline (BIA).
             </div>
         </section>
 
@@ -1070,8 +1080,7 @@
 
 <footer>
     <p>
-        &copy; 2026 <a href="https://dayoon-ko.github.io">Dayoon Ko</a> |
-        <a href="https://vision.snu.ac.kr">Vision & Learning Lab @ SNU</a>
+        &copy; 2026 <a href="https://andyj1.github.io">Dayoon Ko</a> |
     </p>
 </footer>
 
