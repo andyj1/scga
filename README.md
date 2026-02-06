@@ -2,32 +2,15 @@
 
 This official repository contains the implementation of SCGA, a semantic structure-aware add-on method to improve black-box adversarial transferability of generative attacks.
 
-## Commands
-```bash
-python train_BIA_ours.py
-```
+🌐 **Project Site**: [https://andyj1.github.io/SCGA/](https://andyj1.github.io/SCGA/)
 
-📖 **Paper**: [Improving Black-Box Generative Attacks via Generator Semantic Consistency]([https://arxiv.org/abs/????](https://arxiv.org/abs/2506.18248))
-
-
-## 📋 Table of Contents
-
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Quick Start](#quick-start)
-- [Dataset Preparation](#dataset-preparation)
-- [Configuration](#configuration)
-- [Evaluation](#evaluation)
-- [Documentation](#documentation)
-- [License](#license)
+📖 **Paper**: [arXiv:2506.18248](https://arxiv.org/pdf/2506.18248)
 
 ## 🔧 Requirements
 
 - **Python**: >= 3.10
 - **PyTorch**: 2.6.0 (with CUDA 11.8)
-- **Lightning**: 2.5.5
-- **CUDA**: 11.8 or higher (for GPU support)
+- **CUDA**: 11.8+
 
 ## 📦 Installation
 
@@ -35,11 +18,18 @@ python train_BIA_ours.py
 ```bash
 git clone https://github.com/andyj1/SCGA.git
 cd SCGA
-```
-### 2. Install Dependencies
-```bash
 conda create -f environment.yaml
 ```
+
+## 📝 Training the Generator
+
+To train the generator, run:
+
+```bash
+python train_BIA_ours.py
+```
+
+For more options and arguments, see the argument parser in `utee/parser.py`.
 
 
 ## 📖 Citation
