@@ -926,6 +926,7 @@
         <section>
             <h2>Ablation Study</h2>
             <!-- <p> 
+                
                 <strong>U-Net-based generator</strong>:
                 We show that our SCGA is generator architecture-agnostic by demonstrating consistent attack performance improvements with the U-Net architecture.
             </p> -->
@@ -944,6 +945,22 @@
                 MT denotes mean teacher, and better results in boldface.
             </div>
 
+            <div class="pill-row">
+                <div class="pill">
+                    <div class="figure-block">
+                        <h3>Performance by surrogate mid-layer and &#x3C4;</h3>
+                        <img src="imgs/ablation_midlayer_tau.png" alt="Different surrogate mid layer and tau" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+                <div class="pill">
+                    <div class="figure-block">
+                        <h3>Performance by hyperparameters</h3>
+                        <img src="imgs/ablation_hyperparameters.png" alt="Different values of hyperparameters" style="width: 100%; height: 50%;">
+                    </div>
+                </div>
+            </div>
+
+            
             <!-- <div class="figure-block">
                 <h3>Test-time perturbation budget</h3>
                 <img src="imgs/ablation_eps.png" alt="" style="width:100% height: auto;">
@@ -954,12 +971,19 @@
 
             <div class="figure-block">
                 <h3>Robustness to defense mechanisms</h3>
-                <img src="imgs/defense.png" alt="" style="width:100% height: auto;">
-                <img src="imgs/defense_input_processing.png" alt="" style="width:100% height: auto;">
+                <img src="imgs/defense.png" alt="" style="width: 50% height: auto;">
+                <img src="imgs/defense_input_processing.png" alt="" style="width: 50% height: auto;">
             </div>
             <div class="figure-caption">        
                 Against adversarially trained models (Adv.IncV3, Adv.ViT, Adv.ConvNeXt) and input processing (JPEG, BDR, R&P, Random rotation, smoothing kernel (smoothing), total variation minimization (TVM), random pixel deflection (PD)) defenses,
                 our SCGA consistently enhances transfer attack performance over the baseline (BIA).
+            </div>
+            
+            <div class="figure-block">
+                <h3>Robustness to defense and MLLMs</h3>
+                <img src="imgs/defense_realworld.png" alt="Robustness to defense and MLLMs<" style="width: 100%; height: auto;">
+            </div>
+            <div class="figure-caption">              
             </div>
         </section>
 
