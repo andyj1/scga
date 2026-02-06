@@ -1,6 +1,6 @@
-# Improving Black-Box Generative Attacks via Generator Semantic Consistency
+# Improving Black-Box Generative Attacks via Generator Semantic Consistency (ICLR 2026)
 
-This repository contains the implementation of SCGA, a method to improve black-box adversarial transferability of generative attacks.
+This official repository contains the implementation of SCGA, a semantic structure-aware add-on method to improve black-box adversarial transferability of generative attacks.
 
 ## Commands
 ```bash
@@ -47,10 +47,11 @@ conda create -f environment.yaml
 If you find this work useful, please cite:
 
 ```bibtex
-@article{mdd-vl2025,
-  title={Improving Black-Box Generative Attacks via Generator Semantic Consistency},
-  author={Jongoh Jeong, Hunmin Yang, Jaeseok Jeong, Kuk-Jin Yoon},
-  journal={arxix:2506.18248},
-  year={2025}
-}
+@inproceedings{jeong2026scga,
+                title={Improving Black-Box Generative Attacks via Generator Semantic Consistency},
+                author={Jeong, Jongoh and Yang, Hunmin and Jeong, Jaeseok and Yoon, Kuk-Jin},
+                booktitle={International Conference on Learning Representations (ICLR)},
+                year={2026}
+                url={https://openreview.net/forum?id=ibXhUapwcz}
+              }
 ```

@@ -1,1 +1,1 @@
-DATA_ROOT_DIR = '/mnt/sdf/datasets'
+DATA_ROOT_DIR = 'DATA/ROOT/DIR'
