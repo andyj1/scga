@@ -21,14 +21,6 @@ Transfer attacks optimize on a surrogate and deploy to a black-box target. While
 - **PyTorch**: 2.6.0 (with CUDA 11.8)
 - **CUDA**: 11.8+
 
-## 📦 Installation
-
-### Clone the Repository
-```bash
-git clone https://github.com/andyj1/SCGA.git
-cd SCGA
-conda create -f environment.yaml
-```
 
 ## 📊 Datasets
 
@@ -110,11 +102,13 @@ DATA_ROOT_DIR/
 └── air/
 ```
 
-## 📝 Training the Generator
-
-To train the generator, run:
+## 📦 Installation & 📝 Training the Generator
 
 ```bash
+git clone https://github.com/andyj1/SCGA.git
+cd SCGA
+conda create -f environment.yaml
+
 python train_BIA_ours.py
 ```
 
