@@ -2,7 +2,7 @@
 
 This official repository contains the implementation of SCGA, a semantic structure-aware add-on method to improve black-box adversarial transferability of generative attacks.
 
-🌐 **Project Site**: [Project](https://andyj1.github.io/SCGA/)
+🌐 **Project Site**: [Project](https://andyj1.github.io/scga)
 
 📖 **Paper**: [Paper](https://arxiv.org/pdf/2506.18248)
 
